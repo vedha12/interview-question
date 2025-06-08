@@ -1,20 +1,39 @@
+Reactjs Questions
 useReducer
 react elements
 uselayouteffect
+debouncing & throttling
+function currying, composition
+temporal dead zone(tdz)
+event delegation
+event bubbling, capturing
+self invoking function(iife)
+optional chaining
+null coalescing operator
+reconcilliation process
+diffing alogorthm 
+react virtualization
+props drilling
+code splitting
+react elements
 
+
+Common Questions 
 rgba?
 Div align center in Flex and Grid ?
-Reconciliation and diffing algorithm?
 Optional chaining?
 Accessibility – A -AA-AAA ?
-code spiliting ?
 symatic css
-react elements
+immutability
+promise api's
 reduce
 html feature
 css feature
+
 ----- may 2025
-ES6 Features
+JAVASCRIPT Questions
+
+ES6 Features 
 why arrow? => Arrow functions do not have their own this. Instead, they inherit this from the surrounding (lexical) scope.
 template Literals => `my name is  ${saitama}`
 Destructuring => const { name, age } = { name: "John", age: 30 };
