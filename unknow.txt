@@ -1,0 +1,43 @@
+useReducer
+react elements
+uselayouteffect
+
+rgba?
+Div align center in Flex and Grid ?
+Reconciliation and diffing algorithm?
+Optional chaining?
+Accessibility – A -AA-AAA ?
+code spiliting ?
+symatic css
+react elements
+reduce
+html feature
+css feature
+----- may 2025
+ES6 Features
+why arrow? => Arrow functions do not have their own this. Instead, they inherit this from the surrounding (lexical) scope.
+template Literals => `my name is  ${saitama}`
+Destructuring => const { name, age } = { name: "John", age: 30 };
+Spread: Expand iterable elements.
+Rest: Collect arguments into an array.
+Promises => Handle asynchronous operations more gracefully than callbacks.
+promise.all => this helps to make multiple api call but anyone get failed all will failed.
+Enhanced Object Literals : 
+let x = 10;
+let obj = {
+  x,
+  greet() {
+    console.log("Hello");
+  }
+};
+For...of Loop =>Loop over iterable objects (arrays, strings, etc.)
+object 
+
+1 + 2 + "3" + "4" + 5 + 6;
+1 + 2 + "3" + "4" + (5 + 6);
+"1" + "2" + (3 + 4) + 5 + "6";
+['Apple', 'Banana', 'Orange', 'Pinapple']
+ 
+1. Create input box
+2. show the list in UI
+3. Write Search filter function 

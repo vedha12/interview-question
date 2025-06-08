@@ -1,0 +1,39 @@
+[
+    {
+      "heading": "JS",
+      "routeLink": "/javascript",
+      "ReactQuestion": "",
+      "Icon": "/assets/icons8-javascript.svg"
+    },
+    {
+      "heading": "React",
+      "routeLink": "/react",
+      "ReactQuestion": "",
+      "Icon": "/assets/icons8-react.svg"
+    },
+    {
+      "heading": "Angular",
+      "routeLink": "/angular",
+      "ReactQuestion": "",
+      "Icon": "/assets/icons8-angular.svg"
+    },
+    {
+      "heading": "Node",
+      "routeLink": "/node",
+      "ReactQuestion": "",
+      "Icon": "/assets/icons8-node-js.svg"
+    },
+    {
+      "heading": "SQL",
+      "routeLink": "/postgresql",
+      "ReactQuestion": "",
+      "Icon": "/assets/icons8-postgresql.svg"
+    },
+    {
+      "heading": "MongoDB",
+      "routeLink": "/mongodb",
+      "ReactQuestion": "",
+      "Icon": "/assets/icons8-mongodb.svg"
+    }
+  ]
+  

@@ -1,0 +1,39 @@
+/* Entrance animation */
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.sideMenu {
+  background-color: rgba(0, 0, 0, 0.169);
+  padding: 6px;
+  border-radius: 8px;
+  border: 1.2px solid white;
+
+  /* Smooth interaction */
+  transition: all 0.3s ease;
+
+  /* Entrance animation */
+  animation: fadeInSlide 0.4s ease-out;
+
+  /* Base transform */
+  transform: scale(1);
+}
+
+.sideHover:hover {
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1.2px solid rgba(92, 176, 193, 0.541);
+  background-color: rgba(255, 255, 255, 0.05);
+
+  /* Hover animation */
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(92, 176, 193, 0.5);
+}
