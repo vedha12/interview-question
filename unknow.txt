@@ -16,8 +16,7 @@ react virtualization
 props drilling
 code splitting
 react elements
-
-
+Why classname 
 Common Questions 
 rgba?
 Div align center in Flex and Grid ?
@@ -29,7 +28,7 @@ promise api's
 reduce
 html feature
 css feature
-
+different type of storages in browser
 ----- may 2025
 JAVASCRIPT Questions
 
@@ -52,6 +51,7 @@ let obj = {
 For...of Loop =>Loop over iterable objects (arrays, strings, etc.)
 object 
 
+code Test
 1 + 2 + "3" + "4" + 5 + 6;
 1 + 2 + "3" + "4" + (5 + 6);
 "1" + "2" + (3 + 4) + 5 + "6";
@@ -60,3 +60,184 @@ object
 1. Create input box
 2. show the list in UI
 3. Write Search filter function 
+
+≈===≈===≈==============
+find duplicate ,unique and count od duplicate?
+let array = [1, 2, 3, 4, 4, 5, 6, 7, 6, 3, 2, 4, 1];
+
+  let duplicate = [];
+
+  let unique = [];
+
+  let count = {};
+
+
+  for (let i of array) {
+
+    count[i] = (count[i] || 0) + 1;
+
+  }
+
+  for (const [key, value] of Object.entries(count)) {
+
+    if (value > 1) {
+
+      duplicate.push(key);
+
+    } else {
+
+      unique.push(key);
+
+    }
+
+  }
+
+  console.log('count',count,'duplicate', duplicate, 'unique',unique);
+≈==========≈=======================
+
+css preprocessor , xml , bable , webpack, html doc
+
+css vs scss
+closure disadvantage
+Fetch vs axios
+  let clinicOperationMap = [
+
+    {
+
+      visitDate: '2022-01-22',
+
+
+      capacity: {
+
+        '9:00-10:00': '3',
+
+
+        '10:00-11:00': '0',
+
+      },
+
+    },
+
+
+    {
+
+      visitDate: '2022-01-23',
+
+
+      capacity: {
+
+        '9:00-10:00': '3',
+
+
+        '11:00-12:00': '0',
+
+      },
+
+    },
+
+
+    {
+
+      visitDate: '2022-01-24',
+
+
+      capacity: {
+
+        '9:00-10:00': '3',
+
+
+        '13:00-14:00': '0',
+
+      },
+
+    },
+
+  ];  
+
+  
+
+  clinicOperationMap.map((day) => {
+
+    Object.keys(day.capacity).forEach((timeSlot) => {
+
+      if (day.capacity[timeSlot] === '0') {
+
+        delete day.capacity[timeSlot];
+
+      }
+function test () {
+
+   let value = "89"
+
+   let result = 0 ;
+
+ 
+
+
+  for(let i=0 ; i<value.length;i++){  
+
+
+result += Math.pow(parseInt(value[i]), i + 1)
+
+console.log(result)
+
+  }
+
+   
+
+}
+
+test()
+
+    });
+
+  });
+
+redux saga advantages
+
+const userProfiles = [
+
+ { userId: "U1", name: "Riya", city: "Delhi" },
+
+ { userId: "U2", name: "Sameer", city: "Mumbai" },
+
+];
+
+
+function fetchUserActivity(userId) {
+
+    const activity = {
+
+      U1: [{ type: "login", timestamp: "2024-02-01" }, { type: "logout", timestamp: "2024-02-01" }],
+
+      U2: [{ type: "purchase", item: "Laptop", timestamp: "2024-02-02" }],
+
+    }
+
+    return activity[userId] || [];
+
+    }
+
+
+   
+
+const result = userProfiles.map((value)=> {
+
+
+let activity = fetchUserActivity(value.userId)
+
+
+return{...value,activity:activity }
+
+
+
+
+})
+
+
+console.log(result)
+
+
+
+
+
