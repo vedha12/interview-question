@@ -1,8 +1,7 @@
-Reactjs Questions
+Reactjs Questions ===============
 useReducer
 react elements
 uselayouteffect
-debouncing & throttling
 function currying, composition
 temporal dead zone(tdz)
 event delegation
@@ -15,11 +14,12 @@ diffing alogorthm
 react virtualization
 props drilling
 code splitting
-react elements
 Why classname 
 redux saga advantages
+debouncing & throttling
 
-Common Questions 
+
+Common Questions =============
 rgba?
 Div align center in Flex and Grid ?
 Optional chaining?
@@ -42,7 +42,7 @@ Fetch vs axios
 
 ----- may 2025
 
-ES6 Features 
+ES6 Features ================
 why arrow? => Arrow functions do not have their own this. Instead, they inherit this from the surrounding (lexical) scope.
 template Literals => `my name is  ${saitama}`
 Destructuring => const { name, age } = { name: "John", age: 30 };
@@ -50,6 +50,7 @@ Spread: Expand iterable elements.
 Rest: Collect arguments into an array.
 Promises => Handle asynchronous operations more gracefully than callbacks.
 promise.all => this helps to make multiple api call but anyone get failed all will failed.
+
 Enhanced Object Literals : 
 let x = 10;
 let obj = {
@@ -59,13 +60,95 @@ let obj = {
   }
 };
 For...of Loop =>Loop over iterable objects (arrays, strings, etc.)
-object 
+================
+new MAP
+const map = new Map();
+
+map.set('name', 'Alice');
+map.set(1, 'one');
+map.set(true, 'yes');
+
+console.log(map.get('name'));  // Alice
+console.log(map.has(1));       // true
+console.log(map.size);         // 3
+
+map.delete(true);
+console.log(map.size);         // 2
+
+===========
+Set
+A Set stores unique values (no duplicates allowed).
+const set = new Set();
+
+set.add(1);
+set.add(2);
+set.add(2);  // Duplicate, won't be added
+
+console.log(set.has(2));   // true
+console.log(set.size);     // 2
+
+set.delete(1);
+console.log(set);          // Set { 2 }
+
+==============
+get (Getter in Object)
+get is used to define a getter method for an object property.
+
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+};
+
+console.log(person.fullName);  // John Doe
+============
+Array of object Method 
+const users = [
+  { id: 1, name: "Alice", age: 25 },
+  { id: 2, name: "Bob", age: 30 },
+  { id: 3, name: "Charlie", age: 22 }
+];
+=========
+map() – Transform values
+const names = users.map(user => user.name);
+console.log(names);  // ['Alice', 'Bob', 'Charlie']
+
+============
+filter() – Filter by condition
+const youngUsers = users.filter(user => user.age < 28);
+console.log(youngUsers);  // Alice & Charlie
+
+============
+find() – Find the first matching element
+const bob = users.find(user => user.name === "Bob");
+console.log(bob);  // { id: 2, name: 'Bob', age: 30 }
+
+============
+some() – Check if at least one matches
+const hasTeenager = users.some(user => user.age < 20);
+console.log(hasTeenager);  // false
+
+============
+every() – Check if all match
+const allAdults = users.every(user => user.age >= 18);
+console.log(allAdults);  // true
+
+============
+reduce() – Aggregate data
+const totalAge = users.reduce((sum, user) => sum + user.age, 0);
+console.log(totalAge);  // 77
+============
+
 
 ===============================
 code Test===========
-1 + 2 + "3" + "4" + 5 + 6;
-1 + 2 + "3" + "4" + (5 + 6);
-"1" + "2" + (3 + 4) + 5 + "6";
+1 + 2 + "3" + "4" + 5 + 6; => 33456
+1 + 2 + "3" + "4" + (5 + 6); =>33411
+"1" + "2" + (3 + 4) + 5 + "6"; =>12756
+
+================================
 ['Apple', 'Banana', 'Orange', 'Pinapple']
  
 1. Create input box
@@ -94,7 +177,7 @@ let array = [1, 2, 3, 4, 4, 5, 6, 7, 6, 3, 2, 4, 1];
 ≈==========≈=======================
 Remove 0 th value
 
-key hint
+key hint this '10:00-11:00' into ['10:00-11:00']
   let clinicOperationMap = [
     {
       visitDate: '2022-01-22',
@@ -158,3 +241,85 @@ return{...value,activity:activity }
 console.log(result);
 
 =====================================
+Debouncing with custom hooks example
+part 1
+import React, { useState, useEffect } from 'react';
+
+export default function useDebounce(value, delay) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const handler = setTimeout(() => setDebouncedValue(value), delay);
+
+    return () => clearTimeout(handler); // Cleanup previous timeout
+  }, [value, delay]);
+
+  return debouncedValue;
+}
+
+part 2 
+export default function SearchInput() {
+  const [input, setInput] = useState('');
+  const debouncedInput = useDebounce(input, 500);
+
+  useEffect(() => {
+    if (debouncedInput) {
+      // Trigger API call or something after user stops typing
+      console.log('API call with:', debouncedInput);
+    }
+  }, [debouncedInput]);
+
+  return (
+    <input
+      value={input}
+      onChange={e => setInput(e.target.value)}
+      placeholder="Type to search..."
+    />
+  );
+}
+=================================
+let interval = null;
+
+var startTime = new Date().getTime();
+var hour = 0;
+var min = 0;
+var sec = 0;
+
+function start() {
+  interval = setInterval(() => {
+    var newTime = new Date().getTime();
+    var diff = newTime - startTime;
+
+    sec = new Date(diff).getSeconds();
+
+    if (sec == 59) {
+      sec = 0;
+      min += 1;
+    }
+
+    if (sec == 59 && min == 59) {
+      sec = 0;
+      min = 0;
+      hour += 1;
+    }
+
+    document.getElementById("display").textContent = `${hour}:${min}:${sec}`;
+
+    console.log(new Date(diff).getSeconds());
+  }, 1000);
+}
+
+function stop() {
+  clearInterval(interval);
+  interval = null;
+}
+
+function reset() {
+  stop();
+
+  sec = 0;
+  min = 0;
+  hour = 0;
+
+  document.getElementById("display").textContent = `${hour}:${min}:${sec}`;
+}

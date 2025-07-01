@@ -1,0 +1,109 @@
+find max?
+m1 : 
+
+let arr = [2, 34, 6, 76, 89, 43, 56];
+let great;
+
+for (let i of arr) {
+    if (arr.every(a => i >= a)) {
+        great = i;
+        break; 
+    }
+}
+
+m2 :
+
+great = arr.reduce((max, current) => current > max ? current : max);
+
+console.log(great); 
+
+m3 :
+
+arr.Math.max(arr)
+===================================
+JavaScript program to reverse 
+m1 :
+let str = 'hello';
+for (let i = str.length - 1; i >= 0; i--) {
+    console.log(str[i]);
+}
+
+m2 :
+function reverseString(str) {
+    return str.split('').reduce((rev, char) => char + rev, '');
+}
+
+m3 :
+function reverseString(str) {
+    let arr = [];
+    for (let char of str) {
+        arr.unshift(char); // adds to front
+    }
+    return arr.join('');
+}
+====================================
+
+Check Palindrome (reads the same forwards and backwards)
+m1 :
+let str = 'madam'
+let rev = str.split('').reverse().join('')
+
+console.log(str===rev)
+
+m2:
+function isPalindrome(str) {
+    for (let i = 0; i < str.length / 2; i++) {
+        if (str[i] !== str[str.length - 1 - i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(isPalindrome("racecar")); // true
+console.log(isPalindrome("world"));   // false
+
+=====================================
+ the factorial of a given number (3! = 3 × 2 × 1 = 6)
+ m1 :
+ let str = 3;
+let prev; 
+for (let i = str; i >= 1; i--) {
+    if(prev){
+        prev=prev*i
+    }else{
+       prev = str
+    }
+}
+console.log(prev);
+
+=====================================
+number is prime.
+To check if a given number is prime, loop from 2 to the square root of the number. 
+If any integer evenly divides it, the number is not prime. 
+m1 :
+let num =199
+
+function isPrime(num) { 
+  if (num <= 1) return false; 
+  for (let i = 2; i <= Math.sqrt(num); i++) { 
+    if (num % i === 0) return false; 
+  } 
+  return true; 
+} 
+    console.log(isPrime(num));
+
+==================================
+fibonacci series 
+function fibonacci(n) {
+  let prev = 0;
+  let curr = 1;
+
+  for (let i = 0; i < n; i++) {
+    console.log(prev);
+    let next = prev + curr;
+    prev = curr;
+    curr = next;
+  }
+}
+fibonacci(10)
